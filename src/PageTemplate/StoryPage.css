@@ -1,0 +1,16 @@
+.Question{
+    font-size: 44px;
+    font-weight: 500;
+    min-height: 30vh;
+}
+.StoryPage{
+    flex:1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    padding-top: 10vh;
+    transition-duration: 600ms;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}

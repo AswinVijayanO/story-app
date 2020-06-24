@@ -2,6 +2,7 @@
     "questions":[
         {
             "text":"You have a box",
+            "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
             "options":[
                 {
                     "text":"Open the box",
@@ -15,6 +16,7 @@
         },
         {
             "text":"There is a key",
+            "img":"https://images.unsplash.com/photo-1562701447-8ec5d514a2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
             "options":[
                 {
                     "text":"take the key",
@@ -28,6 +30,7 @@
         },
         {
             "text":"There is a door, but thats locked",
+            "img":"https://images.unsplash.com/photo-1542251224-3e60f8d50cd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1527&q=80",
             "options":[
                 {
                     "text":"Open the door using the key",
@@ -41,6 +44,7 @@
         },
         {
             "text":"You found the treasure,you won!",
+            "img" : "https://images.unsplash.com/photo-1585924775990-bd3f24bbc72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
             "options":[
                 {
                     "text":"exit the game",
