@@ -27,9 +27,9 @@ class App extends React.Component {
           user
             ? <div>
               <StoryPage questions={conf.questions}  user={user} />
-              <button onClick={signOut}>Sign Out</button>
+              <button className="button" onClick={signOut}>Sign Out</button>
             </div>
-            : <button onClick={signInWithGoogle}>Sign in with Google</button>
+            : <button className="button" onClick={signInWithGoogle}>Sign in with Google</button>
         }
 
       </div>
