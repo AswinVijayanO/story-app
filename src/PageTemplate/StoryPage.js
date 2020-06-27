@@ -82,7 +82,6 @@ class StoryPage extends React.Component {
                                     <button
                                         className="button"
                                         onClick={() => {
-                                            console.log("clicked");
                                             this.setState({
                                                 question: this.props.questions[item.actionIndex],
                                                 stage: item.actionIndex

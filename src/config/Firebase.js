@@ -18,15 +18,3 @@ export const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 export const db = firebaseApp.firestore()
-
-export const saveUserProgress = async (uid, stage) => {
-  var user = await db
-    .collection('users')
-    .doc(uid)
-    .get()
-  var newStageUser = user.stages.indexOf(stage) === -1 ? { uid: uid, stages : user.stages.concat(stage) } : user
-
-  db.collection('users')
-    .doc(uid)
-    .set(newStageUser)
-}
