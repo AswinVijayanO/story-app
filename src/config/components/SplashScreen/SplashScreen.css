@@ -54,6 +54,8 @@
   .content__container__list {
     margin-top: 0;
     padding-left: 110px;
+    padding-bottom: 6px;
+    line-height: 50px;
     text-align: left;
     list-style: none;
     -webkit-animation-name: change;
@@ -64,8 +66,9 @@
     animation-iteration-count: infinite;
   }
   .content__container__list__item {
-    line-height: 40px;
-    margin: 0;
+    line-height: 50px;
+    margin: -2px;
+    height: 40px;
   }
   
   @-webkit-keyframes opacity {
