@@ -1,23 +1,23 @@
-.Question{
+.Question {
     font-size: 44px;
     font-weight: 500;
     min-height: 30vh;
-}
-.StoryPage{
-    flex:1;
+  }
+  .StoryPage {
+    flex: 1;
     flex-direction: column;
     justify-content: space-evenly;
     height: 100vh;
     padding-top: 10vh;
-    transition-duration: 600ms;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-.image{
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+  }
+  .image {
     position: absolute;
     z-index: -1;
     top: 0;
     height: 100%;
     left: 0;
-}
+  }
+  
