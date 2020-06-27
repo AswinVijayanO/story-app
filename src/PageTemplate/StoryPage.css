@@ -1,7 +1,9 @@
+
 .Question {
     font-size: 44px;
     font-weight: 500;
     min-height: 30vh;
+
   }
   .StoryPage {
     flex: 1;
@@ -9,10 +11,9 @@
     justify-content: space-evenly;
     height: 100vh;
     padding-top: 10vh;
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
-    transition-property: all;
+
   }
+
   .image {
     position: absolute;
     z-index: -1;
@@ -20,4 +21,33 @@
     height: 100%;
     left: 0;
   }
-  
+  .fade-appear {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+/* enter */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in 1000ms;
+}
+
+/* exit */
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit.fade-exit-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-out 1000ms;
+}
+.fade-exit-done {
+  opacity: 0;
+}

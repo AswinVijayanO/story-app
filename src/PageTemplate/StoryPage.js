@@ -1,7 +1,7 @@
 import React from "react";
 import "./StoryPage.css";
 import { db } from "../config/Firebase";
-
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 class StoryPage extends React.Component {
     constructor(props) {
         super(props);
@@ -66,35 +66,45 @@ class StoryPage extends React.Component {
         if (!this.state.loading) {
             this.saveUserProgress(this.state.user.uid, this.state.stage);
             return (
-                <div key={this.state.stage} className="StoryPage">
-                    <div className="Question">
-                        <p>{this.state.question.text}</p>
-                    </div>
-                    {this.state.question.img ? (
-                        <img className="image" src={this.state.question.img} />
-                    ) : (
-                            <></>
-                        )}
-                    <div className="options">
-                        {this.state.question.options.map(item => {
-                            return (
-                                <div>
-                                    <button
-                                        className="button"
-                                        onClick={() => {
-                                            this.setState({
-                                                question: this.props.questions[item.actionIndex],
-                                                stage: item.actionIndex
-                                            });
-                                        }}
-                                    >
-                                        {item.text}
-                                    </button>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                <TransitionGroup>
+                    <CSSTransition
+                        in={true}
+                        key={this.state.stage}
+                        timeout={2000}
+                        classNames="fade"
+                    >
+                        <div id={"stage" + this.state.stage} className="StoryPage">
+                            <div className="Question">
+                                <p>{this.state.question.text}</p>
+                            </div>
+                            {this.state.question.img ? (
+                                <img className="image" src={this.state.question.img} />
+                            ) : (
+                                    <></>
+                                )}
+                            <div className="options">
+                                {this.state.question.options.map(item => {
+                                    return (
+                                        <div>
+                                            <button
+                                                className="button"
+                                                onClick={() => {
+                                                    this.setState({
+                                                        question: this.props.questions[item.actionIndex],
+                                                        stage: item.actionIndex
+                                                    });
+                                                }}
+                                            >
+                                                {item.text}
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </CSSTransition>
+                </TransitionGroup>
+
             );
         } else {
             return (
