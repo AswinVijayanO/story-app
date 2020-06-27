@@ -2,6 +2,7 @@ import React from "react";
 import "./StoryPage.css";
 import { db } from "../config/Firebase";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import LazyLoad from 'react-lazy-load';
 class StoryPage extends React.Component {
     constructor(props) {
         super(props);
@@ -78,7 +79,12 @@ class StoryPage extends React.Component {
                                 <p>{this.state.question.text}</p>
                             </div>
                             {this.state.question.img ? (
+                                <LazyLoad 
+                                debounce={false}
+                                offsetVertical={500}
+                                >
                                 <img className="image" src={this.state.question.img} />
+                                </LazyLoad>
                             ) : (
                                     <></>
                                 )}

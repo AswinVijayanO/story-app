@@ -48,7 +48,7 @@
             "options":[
                 {
                     "text":"exit the game",
-                    "actionIndex":3
+                    "actionIndex":0
                 }
             ]
         },
@@ -57,7 +57,7 @@
             "options":[
                 {
                     "text":"exit the game",
-                    "actionIndex":4
+                    "actionIndex":0
                 }
             ]
         }
