@@ -96,8 +96,7 @@ class StoryPage extends React.Component {
                                 {this.state.question.options.map(item => {
                                     return (
                                         <div>
-                                            <button
-                                                className="button"
+                                            <div className="neon-button"
                                                 onClick={() => {
                                                     this.setState({
                                                         question: this.props.questions[item.actionIndex],
@@ -106,7 +105,7 @@ class StoryPage extends React.Component {
                                                 }}
                                             >
                                                 {item.text}
-                                            </button>
+                                            </div>
                                         </div>
                                     );
                                 })}
