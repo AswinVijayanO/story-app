@@ -20,6 +20,7 @@
   padding: 12px 16px;
   font-size: 16px;
   cursor: pointer;
+  z-index: 5;
 }
 .signout:before {
   content: url(./icons/music.svg);

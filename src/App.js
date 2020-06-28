@@ -46,6 +46,10 @@ signInWithGooglePop() {
   });
 }
   render() {
+    const {
+      user,
+      signOut,
+    } = this.props;
     function TopBar() {
       return (<div className="top-bar">
       <div className="button signout" onClick={signOut}></div>
@@ -62,16 +66,13 @@ signInWithGooglePop() {
       }
       return<div></div>;
     }
-    const {
-      user,
-      signOut,
-    } = this.props;
     return (
       <div className="App">
         {
           user
             ? <div>
               <StoryPage questions={conf.questions}  user={user} />
+              <audio src={conf.generalConfig.audioUrl} controls={false} autoPlay/>
               < TopBar/>
             </div>
             : <div><SplashLoader isLoggedIn={this.state.loading} />
