@@ -67,7 +67,7 @@ signInWithGooglePop() {
           user
             ? <div>
               <StoryPage questions={conf.questions}  user={user} />
-              {/* <button className="button" onClick={signOut}>Sign Out</button> */}
+              <button className="button" onClick={signOut}>Sign Out</button>
             </div>
             : <div><SplashLoader isLoggedIn={this.state.loading} /><button className="button" onClick={this.signInWithGooglePop}>Sign In with Google</button></div>
         }

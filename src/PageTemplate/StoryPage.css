@@ -2,7 +2,8 @@
 .Question {
     font-size: 44px;
     font-weight: 500;
-    min-height: 30vh;
+    margin-bottom: auto;
+    padding-top: 1em;
 
   }
   .StoryPage {
@@ -23,7 +24,7 @@
     top: 0;
     height: 100%;
     left: 0;
-    animation: zoominoutsinglefeatured 150s forwards;
+    animation: zoominoutsinglefeatured 100s forwards;
   }
   @keyframes zoominoutsinglefeatured {
     0% {
