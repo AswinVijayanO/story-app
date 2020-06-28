@@ -10,20 +10,21 @@
   color: aliceblue;
   background-color:transparent;
 }
-.button{
-  text-decoration: none;
-  font-family: 'DM Sans', sans-serif;
-  border: none;
-  background-color: '#ffffff66';
-  font-size: 22px;
-  font-weight: 500;
-  padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 20px;
-  color: '#aaa';
+.top-bar{
+  display: flex;
+  justify-content: space-between;
 }
-.button:hover  {
-box-shadow: 0 10px 10px #00000055;
-transition-duration: 400ms;
+.button{
+  border: none;
+  color: grey;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.signout:before {
+  content: url(./icons/music.svg);
+  width: 20px;
+  float: left;
+  margin-right: 5px;
+  margin-top: -2px;
 }

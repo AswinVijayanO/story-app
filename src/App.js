@@ -46,7 +46,12 @@ signInWithGooglePop() {
   });
 }
   render() {
-    
+    function TopBar() {
+      return (<div className="top-bar">
+      <div className="button signout" onClick={signOut}></div>
+      <div className="button signout" onClick={signOut}></div>
+      </div>)
+    }
     function SplashScreenComp(props) {
       return <SplashScreen />;
     }
@@ -67,9 +72,11 @@ signInWithGooglePop() {
           user
             ? <div>
               <StoryPage questions={conf.questions}  user={user} />
-              <button className="button" onClick={signOut}>Sign Out</button>
+              < TopBar/>
             </div>
-            : <div><SplashLoader isLoggedIn={this.state.loading} /><button className="button" onClick={this.signInWithGooglePop}>Sign In with Google</button></div>
+            : <div><SplashLoader isLoggedIn={this.state.loading} />
+            <button className="button" onClick={this.signInWithGooglePop}>Sign In with Google</button>
+            </div>
         }
 
       </div>
