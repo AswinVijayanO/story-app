@@ -2,6 +2,7 @@ import React from "react";
 import "./StoryPage.css";
 import { db } from "../config/Firebase";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import SplashScreen from '../config/components/SplashScreen/SplashScreen';
 import LazyLoad from 'react-lazy-load';
 class StoryPage extends React.Component {
     constructor(props) {
@@ -117,9 +118,7 @@ class StoryPage extends React.Component {
             );
         } else {
             return (
-                <div>
-                    <p>loading</p>
-                </div>
+                <SplashScreen/>
             );
         }
     }
