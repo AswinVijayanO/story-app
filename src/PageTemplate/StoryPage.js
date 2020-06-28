@@ -76,7 +76,11 @@ class StoryPage extends React.Component {
                     >
                         <div id={"stage" + this.state.stage} className="StoryPage">
                             <div className="Question">
-                                <p>{this.state.question.text}</p>
+                                <p>{
+                                this.state.question.textHighlight ?
+                                <div className={"effect-" + this.state.question.textHighlight}>{this.state.question.text}</div>
+                                : 
+                                this.state.question.text}</p>
                             </div>
                             {this.state.question.img ? (
                                 <LazyLoad 

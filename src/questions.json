@@ -44,6 +44,7 @@
         },
         {
             "text":"You found the treasure,you won!",
+            "textHighlight": "neonBlink",
             "img" : "https://images.unsplash.com/photo-1585924775990-bd3f24bbc72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
             "options":[
                 {
@@ -54,6 +55,7 @@
         },
         {
             "text":"Failed",
+            "textHighlight": "neonBlink",
             "options":[
                 {
                     "text":"exit the game",
