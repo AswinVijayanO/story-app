@@ -1,68 +1,215 @@
 {
-    "generalConfig":{
-        "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
-    },
-    "questions":[
+    "contests":[
         {
-            "text":"You have a box",
-            "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-            "options":[
+            "generalConfig":{
+                "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
+            },
+            "gameName":"adventure",
+            "questions":[
                 {
-                    "text":"Open the box",
-                    "actionIndex":2
+                    "text":"You have a box",
+                    "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "options":[
+                        {
+                            "text":"Open the box",
+                            "actionIndex":2
+                        },
+                        {
+                            "text":"throw the box",
+                            "actionIndex":4
+                        }
+                    ]
                 },
                 {
-                    "text":"throw the box",
-                    "actionIndex":4
-                }
-            ]
-        },
-        {
-            "text":"There is a key",
-            "img":"https://images.unsplash.com/photo-1562701447-8ec5d514a2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-            "options":[
-                {
-                    "text":"take the key",
-                    "actionIndex":2
+                    "text":"There is a key",
+                    "img":"https://images.unsplash.com/photo-1562701447-8ec5d514a2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "options":[
+                        {
+                            "text":"take the key",
+                            "actionIndex":2
+                        },
+                        {
+                            "text":"throw the box",
+                            "actionIndex":4
+                        }
+                    ]
                 },
                 {
-                    "text":"throw the box",
-                    "actionIndex":4
-                }
-            ]
-        },
-        {
-            "text":"There is a door, but thats locked",
-            "img":"https://images.unsplash.com/photo-1542251224-3e60f8d50cd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1527&q=80",
-            "options":[
-                {
-                    "text":"Open the door using the key",
-                    "actionIndex":3
+                    "text":"There is a door, but thats locked",
+                    "img":"https://images.unsplash.com/photo-1542251224-3e60f8d50cd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1527&q=80",
+                    "options":[
+                        {
+                            "text":"Open the door using the key",
+                            "actionIndex":3
+                        },
+                        {
+                            "text":"Go back",
+                            "actionIndex":4
+                        }
+                    ]
                 },
                 {
-                    "text":"Go back",
-                    "actionIndex":4
+                    "text":"You found the treasure,you won!",
+                    "textHighlight": "neonBlink",
+                    "img" : "https://images.unsplash.com/photo-1585924775990-bd3f24bbc72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
+                    "options":[
+                        {
+                            "text":"exit the game",
+                            "actionIndex":0
+                        }
+                    ]
+                },
+                {
+                    "text":"Failed",
+                    "textHighlight": "neonBlink",
+                    "options":[
+                        {
+                            "text":"exit the game",
+                            "actionIndex":0
+                        }
+                    ]
                 }
             ]
         },
         {
-            "text":"You found the treasure,you won!",
-            "textHighlight": "neonBlink",
-            "img" : "https://images.unsplash.com/photo-1585924775990-bd3f24bbc72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
-            "options":[
+            "generalConfig":{
+                "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
+            },
+            "gameName":"adventure2",
+            "questions":[
                 {
-                    "text":"exit the game",
-                    "actionIndex":0
+                    "text":"You have a box",
+                    "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "options":[
+                        {
+                            "text":"Open the box",
+                            "actionIndex":2
+                        },
+                        {
+                            "text":"throw the box",
+                            "actionIndex":4
+                        }
+                    ]
+                },
+                {
+                    "text":"There is a key",
+                    "img":"https://images.unsplash.com/photo-1562701447-8ec5d514a2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "options":[
+                        {
+                            "text":"take the key",
+                            "actionIndex":2
+                        },
+                        {
+                            "text":"throw the box",
+                            "actionIndex":4
+                        }
+                    ]
+                },
+                {
+                    "text":"There is a door, but thats locked",
+                    "img":"https://images.unsplash.com/photo-1542251224-3e60f8d50cd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1527&q=80",
+                    "options":[
+                        {
+                            "text":"Open the door using the key",
+                            "actionIndex":3
+                        },
+                        {
+                            "text":"Go back",
+                            "actionIndex":4
+                        }
+                    ]
+                },
+                {
+                    "text":"You found the treasure,you won!",
+                    "textHighlight": "neonBlink",
+                    "img" : "https://images.unsplash.com/photo-1585924775990-bd3f24bbc72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
+                    "options":[
+                        {
+                            "text":"exit the game",
+                            "actionIndex":0
+                        }
+                    ]
+                },
+                {
+                    "text":"Failed",
+                    "textHighlight": "neonBlink",
+                    "options":[
+                        {
+                            "text":"exit the game",
+                            "actionIndex":0
+                        }
+                    ]
                 }
             ]
         },
         {
-            "text":"Failed",
-            "textHighlight": "neonBlink",
-            "options":[
+            "generalConfig":{
+                "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
+            },
+            "gameName":"adventure3",
+            "questions":[
                 {
-                    "text":"exit the game",
-                    "actionIndex":0
+                    "text":"You have a box",
+                    "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "options":[
+                        {
+                            "text":"Open the box",
+                            "actionIndex":2
+                        },
+                        {
+                            "text":"throw the box",
+                            "actionIndex":4
+                        }
+                    ]
+                },
+                {
+                    "text":"There is a key",
+                    "img":"https://images.unsplash.com/photo-1562701447-8ec5d514a2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "options":[
+                        {
+                            "text":"take the key",
+                            "actionIndex":2
+                        },
+                        {
+                            "text":"throw the box",
+                            "actionIndex":4
+                        }
+                    ]
+                },
+                {
+                    "text":"There is a door, but thats locked",
+                    "img":"https://images.unsplash.com/photo-1542251224-3e60f8d50cd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1527&q=80",
+                    "options":[
+                        {
+                            "text":"Open the door using the key",
+                            "actionIndex":3
+                        },
+                        {
+                            "text":"Go back",
+                            "actionIndex":4
+                        }
+                    ]
+                },
+                {
+                    "text":"You found the treasure,you won!",
+                    "textHighlight": "neonBlink",
+                    "img" : "https://images.unsplash.com/photo-1585924775990-bd3f24bbc72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
+                    "options":[
+                        {
+                            "text":"exit the game",
+                            "actionIndex":0
+                        }
+                    ]
+                },
+                {
+                    "text":"Failed",
+                    "textHighlight": "neonBlink",
+                    "options":[
+                        {
+                            "text":"exit the game",
+                            "actionIndex":0
+                        }
+                    ]
                 }
             ]
         }
