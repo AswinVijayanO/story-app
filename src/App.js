@@ -29,6 +29,7 @@ class App extends React.Component {
       music: true
     }
     this.signInWithGooglePop = this.signInWithGooglePop.bind(this);
+    this.toggleMusic = this.toggleMusic.bind(this);
   }
 
   signInWithGooglePop() {
@@ -55,6 +56,9 @@ class App extends React.Component {
       // ...
     });
   }
+  toggleMusic() {
+    this.setState({ music: !this.state.music })
+  }
   render() {
     const {
       user,
@@ -63,8 +67,8 @@ class App extends React.Component {
     function TopBar() {
       return (<div className="top-bar">
         {
-          this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
-            : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+          this.state.music ? <MusicNote onClick={this.toggleMusic} size="32" title="Music" />
+            : <MusicOff onClick={this.toggleMusic} size="32" title="Music" />
         }
         <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
       </div>)

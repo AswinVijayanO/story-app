@@ -26,10 +26,3 @@
   cursor: pointer;
   z-index: 5;
 }
-.signout:before {
-  content: url(./icons/music.svg);
-  width: 20px;
-  float: left;
-  margin-right: 5px;
-  margin-top: -2px;
-}
