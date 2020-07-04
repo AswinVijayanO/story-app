@@ -12,6 +12,8 @@
 }
 .top-bar{
   display: flex;
+  position: absolute;
+  width: -webkit-fill-available;
   justify-content: space-between;
 }
 .button{

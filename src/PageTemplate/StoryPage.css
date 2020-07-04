@@ -10,6 +10,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 100%;
     box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
@@ -142,6 +143,7 @@
   text-shadow: 5px 5px 30px blue;
   font-family: 'Quicksand';
   font-weight: lighter;
+  text-align: center;
 }
 @keyframes repeat {
 

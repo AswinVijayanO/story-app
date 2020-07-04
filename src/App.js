@@ -94,10 +94,12 @@ class App extends React.Component {
           {
             conf.contests.map((item) => {
               return (
+                <div className="game-page">
                 <Route path={"/games/" + item.gameName}>
                   <TopBar/>
                   <StoryPage questions={item.questions} user={user} gameName={item.gameName} />
                 </Route>
+                </div>
               )
             })
           }
