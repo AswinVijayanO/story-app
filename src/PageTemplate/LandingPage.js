@@ -8,15 +8,15 @@ export default function LandingPage(props) {
     var contests = conf.contests
     return (
         <div>
-                {
-                    contests.map((item, index) => {
-                        console.log(item.gameName)
-                        return (
-                                <Link to={"/games/" + item.gameName}>
-                                <StoryCard gameDetails={item}></StoryCard></Link>
-                        )
-                    })
-                }
+            {
+                contests.map((item, index) => {
+                    console.log(item.gameName)
+                    return (
+                        <Link to={"/games/" + item.gameName}>
+                            <StoryCard gameDetails={item}></StoryCard></Link>
+                    )
+                })
+            }
 
         </div>
     );

@@ -4,7 +4,7 @@ import { db } from "../config/Firebase";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import SplashScreen from '../config/components/SplashScreen/SplashScreen';
 import LazyLoad from 'react-lazy-load';
-import  { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 class StoryPage extends React.Component {
     constructor(props) {
         super(props);
@@ -40,7 +40,7 @@ class StoryPage extends React.Component {
             });
     }
     componentDidMount() {
-        if(!this.state.user) {
+        if (!this.state.user) {
             return
         }
         var uid = this.state.user.uid;
@@ -87,8 +87,8 @@ class StoryPage extends React.Component {
             });
     }
     render() {
-        if(!this.state.user) {
-            return <Redirect to='/home'  />
+        if (!this.state.user) {
+            return <Redirect to='/home' />
         }
         if (!this.state.loading) {
             this.saveUserProgress(this.state.user.uid, this.state.stage, this.props.gameName);

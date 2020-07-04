@@ -8,6 +8,8 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import SplashScreen from './config/components/SplashScreen/SplashScreen';
+import { MusicNote, MusicOff } from '@styled-icons/material-rounded';
+import { SignOutAlt } from '@styled-icons/fa-solid/SignOutAlt';
 import StoryPage from './PageTemplate/StoryPage'
 import {
   BrowserRouter as Router,
@@ -23,7 +25,8 @@ class App extends React.Component {
       stage: null,
       user: null,
       loaded: false,
-      loading: false
+      loading: false,
+      music: true
     }
     this.signInWithGooglePop = this.signInWithGooglePop.bind(this);
   }
@@ -59,8 +62,11 @@ class App extends React.Component {
     } = this.props;
     function TopBar() {
       return (<div className="top-bar">
-        <div className="button signout" onClick={signOut}></div>
-        <div className="button signout" onClick={signOut}></div>
+        {
+          this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+            : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+        }
+        <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
       </div>)
     }
     function SplashScreenComp(props) {
@@ -95,10 +101,16 @@ class App extends React.Component {
             conf.contests.map((item) => {
               return (
                 <div className="game-page">
-                <Route path={"/games/" + item.gameName}>
-                  <TopBar/>
-                  <StoryPage questions={item.questions} user={user} gameName={item.gameName} />
-                </Route>
+                  <Route path={"/games/" + item.gameName}>
+                    <div className="top-bar">
+                      {
+                        this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                          : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                      }
+                      <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
+                    </div>
+                    <StoryPage questions={item.questions} user={user} gameName={item.gameName} />
+                  </Route>
                 </div>
               )
             })
