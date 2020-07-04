@@ -5,6 +5,7 @@
     margin-bottom: auto;
     padding-top: 1em;
     text-align: center;
+    color: ghostwhite;
   }
   .StoryPage {
     position: absolute;
@@ -157,3 +158,18 @@
 }
 
 /* neon button */
+.line-seperator {
+  position: relative;
+  margin-top: 6px;
+}
+.line-seperator:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: #f1d479;
+  background: radial-gradient(ghostwhite 30%, rgba(241, 212, 121, 0) 80%);
+}

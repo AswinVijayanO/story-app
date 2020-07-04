@@ -119,7 +119,7 @@ class StoryPage extends React.Component {
                                     <></>
                                 )}
                             <div className="options">
-                                {this.state.question.options.map(item => {
+                                {this.state.question.options.map((item, index) => {
                                     return (
                                         <div>
                                             <div className="neon-button"
@@ -132,6 +132,13 @@ class StoryPage extends React.Component {
                                             >
                                                 {item.text}
                                             </div>
+                                            {
+                                                this.state.question.options.length - 1 === index ?
+                                                    <div></div> :
+                                                    <div className="line-seperator">
+                                                    </div>
+                                            }
+
                                         </div>
                                     );
                                 })}
