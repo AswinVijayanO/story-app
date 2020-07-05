@@ -63,8 +63,7 @@ class App extends React.Component {
   }
   componentDidMount(){
     var x = document.getElementById("audio");
-    x.autoplay = true;
-    x.load()
+    x.play()
   }
   render() {
     const {
