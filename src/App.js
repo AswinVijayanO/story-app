@@ -12,6 +12,7 @@ import LoginPage from './config/components/LoginPage/LoginPage';
 import { MusicNote, MusicOff } from '@styled-icons/material-rounded';
 import { SignOutAlt } from '@styled-icons/fa-solid/SignOutAlt';
 import StoryPage from './PageTemplate/StoryPage'
+import mp3 from './audio/sayless.mp3'
 import {
   BrowserRouter as Router,
   Switch,
@@ -91,8 +92,8 @@ class App extends React.Component {
           <Route exact path={"/games/" + item.gameName}>
             <div className="top-bar">
               {
-                this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
-                  : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                this.state.music ? <MusicNote onClick={() => { document.getElementById("audio").muted = true; this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                  : <MusicOff onClick={() => { document.getElementById("audio").muted = false; this.setState({ music: !this.state.music }) }} size="32" title="Music" />
               }
               <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
             </div>
@@ -102,30 +103,34 @@ class App extends React.Component {
       )
     });
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <div className="App">
-              {
-                user
-                  ? <div>
-                    <LandingPage />
-                  </div>
-                  : <div>
-                    {
-                      this.state.loading ? <SplashLoader isLoggedIn={this.state.loading} /> :
-                        <div onClick={this.signInWithGooglePop}><LoginPage /></div>
+      <div>
+        <audio id="audio" src={mp3}  controls={false} autoplay={true}></audio>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <div className="App">
+                {
+                  user
+                    ? <div>
+                      <LandingPage />
+                    </div>
+                    : <div>
+                      {
+                        this.state.loading ? <SplashLoader isLoggedIn={this.state.loading} /> :
+                          <div onClick={this.signInWithGooglePop}><LoginPage /></div>
 
-                    }
+                      }
 
-                  </div>
-              }
+                    </div>
+                }
 
-            </div>
-          </Route>
-        </Switch>
-        {routeGames}
-      </Router>
+              </div>
+            </Route>
+          </Switch>
+          {routeGames}
+        </Router>
+      </div>
+
 
     );
   }

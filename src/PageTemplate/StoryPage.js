@@ -51,9 +51,9 @@ class StoryPage extends React.Component {
         const upadatePage = state => {
             this.setState(state);
         };
-        var me =this
+        var me = this
         const props = this.props;
-        var persolnalisedQ=""
+        var persolnalisedQ = ""
         db.collection("users")
             .doc(uid)
             .get()
@@ -72,8 +72,8 @@ class StoryPage extends React.Component {
                         console.log("Existing user")
                         stage = games.filter((item) => { return item.name === props.gameName })[0].progress.slice(-1)[0]
                     }
-                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[stage],user)
-                    stage = stage>=0?stage : 0
+                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[stage], user)
+                    stage = stage >= 0 ? stage : 0
                     console.log("QUEST?" + persolnalisedQ)
                     upadatePage({
                         stage,
@@ -87,7 +87,7 @@ class StoryPage extends React.Component {
                         .doc(user.uid)
                         .set(updatedUser);
 
-                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[0],user)
+                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[0], user)
                     console.log("QUEST?" + persolnalisedQ)
                     upadatePage({
                         stage: 0,
@@ -103,7 +103,7 @@ class StoryPage extends React.Component {
                     .doc(uid)
                     .set(updatedUser);
 
-                persolnalisedQ = me.getPersonalisedQuestion(props.questions[0],me.state.user)
+                persolnalisedQ = me.getPersonalisedQuestion(props.questions[0], me.state.user)
                 console.log("QUEST?" + persolnalisedQ)
                 upadatePage({
                     stage: 0,
@@ -116,6 +116,9 @@ class StoryPage extends React.Component {
         if (!this.state.user) {
             return <Redirect to='/' />
         }
+        var x = document.getElementById("audio");
+        x.autoplay = true;
+        x.load();
         if (!this.state.loading) {
             this.saveUserProgress(this.state.user.uid, this.state.stage, this.props.gameName);
             return (
@@ -151,7 +154,7 @@ class StoryPage extends React.Component {
                                             <div className="neon-button"
                                                 onClick={() => {
                                                     this.setState({
-                                                        question: this.getPersonalisedQuestion(this.props.questions[item.actionIndex],this.state.user),
+                                                        question: this.getPersonalisedQuestion(this.props.questions[item.actionIndex], this.state.user),
                                                         stage: item.actionIndex
                                                     });
                                                 }}
