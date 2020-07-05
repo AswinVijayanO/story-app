@@ -84,6 +84,22 @@ class App extends React.Component {
       }
       return <div></div>;
     }
+    const routeGames = conf.contests.map((item) => {
+      return (
+        <div className="game-page">
+          <Route exact path={"/games/" + item.gameName}>
+            <div className="top-bar">
+              {
+                this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                  : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+              }
+              <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
+            </div>
+            <StoryPage questions={item.questions} user={user} gameName={item.gameName} />
+          </Route>
+        </div>
+      )
+    });
     return (
       <Router>
         <Switch>
@@ -101,25 +117,8 @@ class App extends React.Component {
 
             </div>
           </Route>
-          {
-            conf.contests.map((item) => {
-              return (
-                <div className="game-page">
-                  <Route path={"/games/" + item.gameName}>
-                    <div className="top-bar">
-                      {
-                        this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
-                          : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
-                      }
-                      <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
-                    </div>
-                    <StoryPage questions={item.questions} user={user} gameName={item.gameName} />
-                  </Route>
-                </div>
-              )
-            })
-          }
         </Switch>
+        {routeGames}
       </Router>
 
     );
