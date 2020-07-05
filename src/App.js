@@ -111,8 +111,13 @@ class App extends React.Component {
                   ? <div>
                     <LandingPage />
                   </div>
-                  : <div><SplashLoader isLoggedIn={this.state.loading} />
-                  <div onClick={this.signInWithGooglePop}><LoginPage /></div>
+                  : <div>
+                    {
+                      this.state.loading ? <SplashLoader isLoggedIn={this.state.loading} /> :
+                        <div onClick={this.signInWithGooglePop}><LoginPage /></div>
+
+                    }
+
                   </div>
               }
 
