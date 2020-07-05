@@ -1,6 +1,6 @@
 
-.Question {
-    font-size: 44px;
+.Question {    
+  font-size: 10vw;
     font-weight: 500;
     margin-bottom: auto;
     padding-top: 1em;
@@ -139,7 +139,7 @@
 /* neon button */
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 .neon-button{
-  font-size: 2rem;
+  font-size: 6vw;
   color: lightblue;
   text-shadow: 5px 5px 30px blue;
   font-family: 'Quicksand';
