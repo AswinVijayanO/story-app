@@ -116,9 +116,7 @@ class StoryPage extends React.Component {
         if (!this.state.user) {
             return <Redirect to='/' />
         }
-        var x = document.getElementById("audio");
-        x.autoplay = true;
-        x.load();
+
         if (!this.state.loading) {
             this.saveUserProgress(this.state.user.uid, this.state.stage, this.props.gameName);
             return (

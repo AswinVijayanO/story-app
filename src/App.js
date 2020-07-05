@@ -61,6 +61,11 @@ class App extends React.Component {
   toggleMusic() {
     this.setState({ music: !this.state.music })
   }
+  componentDidMount(){
+    var x = document.getElementById("audio");
+    x.autoplay = true;
+    x.load()
+  }
   render() {
     const {
       user,
