@@ -8,8 +8,6 @@ import { Redirect } from 'react-router-dom'
 class StoryPage extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
-        console.log("From StoryPAger comp")
         this.state = {
             question: {},
             stage: -1,
@@ -39,22 +37,31 @@ class StoryPage extends React.Component {
                 }
             });
     }
+    getPersonalisedQuestion(question, user) {
+        var newQuestion = question;
+        newQuestion.text = question.text.split("$$NAME$$").join(user.displayName)
+        return newQuestion;
+    }
     componentDidMount() {
         if (!this.state.user) {
             return
         }
         var uid = this.state.user.uid;
+        console.log(uid)
         const upadatePage = state => {
             this.setState(state);
         };
+        var me =this
         const props = this.props;
+        var persolnalisedQ=""
         db.collection("users")
             .doc(uid)
             .get()
             .then(function (user) {
                 if (user.exists) {
                     var games = user.data().games;
-                    if (games.filter((item) => { return item.name == props.gameName }).length === 0) {
+                    if (games.filter((item) => { return item.name === props.gameName }).length === 0) {
+                        console.log("New to this game")
                         var stage = 0
                         var updatedGameProgress = games.concat({ name: props.gameName, progress: [0] });
                         var newUser = { uid, games: updatedGameProgress };
@@ -62,33 +69,52 @@ class StoryPage extends React.Component {
                             .doc(uid)
                             .set(newUser);
                     } else {
-                        var stage = games.filter((item) => { return item.name == props.gameName })[0].progress.slice(-1)[0]
+                        console.log("Existing user")
+                        stage = games.filter((item) => { return item.name === props.gameName })[0].progress.slice(-1)[0]
                     }
-
+                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[stage],user)
+                    stage = stage>=0?stage : 0
+                    console.log("QUEST?" + persolnalisedQ)
                     upadatePage({
                         stage,
-                        question: props.questions[stage],
+                        question: persolnalisedQ,
                         loading: false
                     });
                 } else {
-                    var user = { uid, games: [{ name: props.gameName, progress: [0] }] };
+                    console.log("New to game")
+                    var updatedUser = { uid, games: [{ name: props.gameName, progress: [0] }] };
                     db.collection("users")
                         .doc(user.uid)
-                        .set(user);
+                        .set(updatedUser);
+
+                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[0],user)
+                    console.log("QUEST?" + persolnalisedQ)
                     upadatePage({
                         stage: 0,
-                        question: props.questions[0],
+                        question: persolnalisedQ,
                         loading: false
                     });
                 }
             })
             .catch(function (error) {
-                console.log("Error getting document:", error);
+                console.log("New user")
+                var updatedUser = { uid, games: [{ name: props.gameName, progress: [0] }] };
+                db.collection("users")
+                    .doc(uid)
+                    .set(updatedUser);
+
+                persolnalisedQ = me.getPersonalisedQuestion(props.questions[0],me.state.user)
+                console.log("QUEST?" + persolnalisedQ)
+                upadatePage({
+                    stage: 0,
+                    question: persolnalisedQ,
+                    loading: false
+                });
             });
     }
     render() {
         if (!this.state.user) {
-            return <Redirect to='/home' />
+            return <Redirect to='/' />
         }
         if (!this.state.loading) {
             this.saveUserProgress(this.state.user.uid, this.state.stage, this.props.gameName);
@@ -125,7 +151,7 @@ class StoryPage extends React.Component {
                                             <div className="neon-button"
                                                 onClick={() => {
                                                     this.setState({
-                                                        question: this.props.questions[item.actionIndex],
+                                                        question: this.getPersonalisedQuestion(this.props.questions[item.actionIndex],this.state.user),
                                                         stage: item.actionIndex
                                                     });
                                                 }}

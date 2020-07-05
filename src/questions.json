@@ -8,7 +8,7 @@
             "gameName":"adventure",
             "questions":[
                 {
-                    "text":"You have a box",
+                    "text":"$$NAME$$ You have a box",
                     "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
                     "options":[
                         {
@@ -80,7 +80,7 @@
             "gameName":"adventure2",
             "questions":[
                 {
-                    "text":"You have a box",
+                    "text":"$$NAME$$ You have a box",
                     "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
                     "options":[
                         {
@@ -152,7 +152,7 @@
             "gameName":"adventure3",
             "questions":[
                 {
-                    "text":"You have a box",
+                    "text":"$$NAME$$ You have a box",
                     "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
                     "options":[
                         {
@@ -205,7 +205,7 @@
                     ]
                 },
                 {
-                    "text":"Failed",
+                    "text":"$$NAME$$ Failed",
                     "textHighlight": "neonBlink",
                     "options":[
                         {

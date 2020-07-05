@@ -64,6 +64,7 @@ class App extends React.Component {
       user,
       signOut,
     } = this.props;
+
     function TopBar() {
       return (<div className="top-bar">
         {
@@ -86,12 +87,11 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path="/home">
+          <Route exact path="/">
             <div className="App">
               {
                 user
                   ? <div>
-                    {/* <StoryPage questions={conf.questions} user={user} /> */}
                     <LandingPage />
                   </div>
                   : <div><SplashLoader isLoggedIn={this.state.loading} />
