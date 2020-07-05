@@ -8,6 +8,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import SplashScreen from './config/components/SplashScreen/SplashScreen';
+import LoginPage from './config/components/LoginPage/LoginPage';
 import { MusicNote, MusicOff } from '@styled-icons/material-rounded';
 import { SignOutAlt } from '@styled-icons/fa-solid/SignOutAlt';
 import StoryPage from './PageTemplate/StoryPage'
@@ -111,7 +112,7 @@ class App extends React.Component {
                     <LandingPage />
                   </div>
                   : <div><SplashLoader isLoggedIn={this.state.loading} />
-                    <button className="button" onClick={this.signInWithGooglePop}>Sign In with Google</button>
+                  <div onClick={this.signInWithGooglePop}><LoginPage /></div>
                   </div>
               }
 

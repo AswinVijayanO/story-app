@@ -1,0 +1,41 @@
+.login-container {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    width: 70vw;
+    height: 13vw;
+
+    animation: animated-border 1.5s infinite;
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+.google-text {
+    margin: auto;
+    padding-left: 1em;
+}
+
+@keyframes animated-border {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+}
