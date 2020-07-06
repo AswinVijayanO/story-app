@@ -13,6 +13,7 @@ import { MusicNote, MusicOff } from '@styled-icons/material-rounded';
 import { SignOutAlt } from '@styled-icons/fa-solid/SignOutAlt';
 import StoryPage from './PageTemplate/StoryPage'
 import mp3 from './audio/sayless.mp3'
+import Sound from 'react-sound';
 import {
   BrowserRouter as Router,
   Switch,
@@ -61,10 +62,7 @@ class App extends React.Component {
   toggleMusic() {
     this.setState({ music: !this.state.music })
   }
-  componentDidMount(){
-    var x = document.getElementById("audio");
-    x.play()
-  }
+
   render() {
     const {
       user,
@@ -83,6 +81,16 @@ class App extends React.Component {
     function SplashScreenComp(props) {
       return <SplashScreen />;
     }
+    function Bgm(props){
+      return(
+        <Sound
+        url={mp3}
+        playStatus={props.play?Sound.status.PLAYING:Sound.status.PAUSED}
+        loop={true}
+        autoLoad={true}
+      />
+      )
+    }
     function SplashLoader(props) {
       const isLoggedIn = props.isLoggedIn;
       if (isLoggedIn) {
@@ -96,8 +104,8 @@ class App extends React.Component {
           <Route exact path={"/games/" + item.gameName}>
             <div className="top-bar">
               {
-                this.state.music ? <MusicNote onClick={() => { document.getElementById("audio").muted = true; this.setState({ music: !this.state.music }) }} size="32" title="Music" />
-                  : <MusicOff onClick={() => { document.getElementById("audio").muted = false; this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                  : <MusicOff onClick={() => {this.setState({ music: !this.state.music }) }} size="32" title="Music" />
               }
               <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
             </div>
@@ -108,7 +116,7 @@ class App extends React.Component {
     });
     return (
       <div>
-        <audio id="audio" src={mp3}  controls={false} autoplay={true}></audio>
+        <Bgm play={this.state.music}/>
         <Router>
           <Switch>
             <Route exact path="/">
