@@ -50,7 +50,7 @@ class StoryPage extends React.Component {
                 }
             });
     }
-    reset(uid, stage, gameName) {
+    reset(uid, gameName) {
         var me = this;
         db.collection("users")
             .doc(uid)
@@ -61,8 +61,6 @@ class StoryPage extends React.Component {
                         return;
                     }
                     var games = user.data().games;
-
-
                     var otherGames = games.filter((item) => { return item.name !== gameName })
                     var updatedGameProgress = otherGames.concat({ name: gameName, progress: [0] });
                     db.collection("users")
@@ -186,7 +184,7 @@ class StoryPage extends React.Component {
                             ) : (
                                     <></>
                                 )}
-                            <div className="options blur">
+                            <div className="options">
                                 {this.state.question.options.map((item, index) => {
                                     return (
                                         <div>
@@ -212,8 +210,8 @@ class StoryPage extends React.Component {
                                 })}
 
                             </div>
-                            <div className="reset blur" onClick={() => { this.reset(this.state.user.uid, this.state.stage, this.props.gameName) }}>
-                                <p>Reset </p>
+                            <div className="reset blur" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}>
+                                Reset
                             </div>
                         </div>
                     </CSSTransition>
