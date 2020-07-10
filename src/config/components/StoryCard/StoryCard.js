@@ -17,7 +17,7 @@ class StoryCard extends React.Component {
                         <div className="card" style={{ backgroundImage: "url(" + this.state.gameDetails.generalConfig.thumbnail + ")" }}>
                             <div className="overlay"></div>
                             <div className="content">
-                                <div>{this.state.gameDetails.gameName}</div>
+                                <div>{this.state.gameDetails.gameLabel}</div>
                             </div>
                             <div className="fav">
                                 <i className="far fa-heart"></i>
