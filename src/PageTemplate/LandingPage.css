@@ -1,0 +1,37 @@
+.main-content{
+   
+    color: ghostwhite;
+    background: linear-gradient(-90deg,#8D0865,#BE0D60);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.game-section{
+    
+    background: ghostwhite;
+    border-radius: 20px 20px 0px 0px;
+    position: absolute;
+    z-index: 3;
+    margin-top: 14em;
+    width: 100%;
+}
+.head-section{ 
+    display: flex;
+    align-items: center;
+    margin-left: 0.5em;
+    font-weight: 300;
+    font-size: 11vw;
+    height: 5em;
+    font-family: sans-serif;
+    position: fixed;
+}
+.for-shadow{
+    display: grid;
+}
+.card-top{
+    grid-area: 1 / 1;
+}
+.card-bottom{
+    grid-area: 1 / 1;
+    filter: blur(7px);
+}
