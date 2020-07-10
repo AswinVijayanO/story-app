@@ -12,8 +12,6 @@ import LoginPage from './config/components/LoginPage/LoginPage';
 import { MusicNote, MusicOff } from '@styled-icons/material-rounded';
 import { SignOutAlt } from '@styled-icons/fa-solid/SignOutAlt';
 import StoryPage from './PageTemplate/StoryPage'
-import mp3 from './audio/sayless.mp3'
-import Sound from 'react-sound';
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,7 +27,7 @@ class App extends React.Component {
       user: null,
       loaded: false,
       loading: false,
-      music: true
+      music: false
     }
     this.signInWithGooglePop = this.signInWithGooglePop.bind(this);
     this.toggleMusic = this.toggleMusic.bind(this);
@@ -37,7 +35,7 @@ class App extends React.Component {
 
   signInWithGooglePop() {
     console.log('asd');
-    this.setState({ loading: true });
+    this.setState({ loading: true, music: true });
     var me = this;
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -62,7 +60,9 @@ class App extends React.Component {
   toggleMusic() {
     this.setState({ music: !this.state.music })
   }
+  componentDidMount() {
 
+  }
   render() {
     const {
       user,
@@ -81,16 +81,7 @@ class App extends React.Component {
     function SplashScreenComp(props) {
       return <SplashScreen />;
     }
-    function Bgm(props){
-      return(
-        <Sound
-        url={mp3}
-        playStatus={props.play?Sound.status.PLAYING:Sound.status.PAUSED}
-        loop={true}
-        autoLoad={true}
-      />
-      )
-    }
+
     function SplashLoader(props) {
       const isLoggedIn = props.isLoggedIn;
       if (isLoggedIn) {
@@ -105,43 +96,42 @@ class App extends React.Component {
             <div className="top-bar">
               {
                 this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
-                  : <MusicOff onClick={() => {this.setState({ music: !this.state.music }) }} size="32" title="Music" />
+                  : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
               }
               <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
             </div>
-            <StoryPage questions={item.questions} user={user} gameName={item.gameName} />
+            <StoryPage music={this.state.music} questions={item.questions} user={user} gameName={item.gameName} />
           </Route>
         </div>
       )
     });
     return (
       <div>
-        <Bgm play={this.state.music}/>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <div className="App">
-                {
-                  user
-                    ? <div>
-                      <LandingPage />
-                    </div>
-                    : <div>
-                      {
-                        this.state.loading ? <SplashLoader isLoggedIn={this.state.loading} /> :
-                          <div onClick={this.signInWithGooglePop}><LoginPage /></div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <div className="App">
+              {
+                user
+                  ? <div>
+                    <LandingPage />
+                  </div>
+                  : <div>
+                    {
+                      this.state.loading ? <SplashLoader isLoggedIn={this.state.loading} /> :
+                        <div onClick={this.signInWithGooglePop}><LoginPage /></div>
 
-                      }
+                    }
 
-                    </div>
-                }
+                  </div>
+              }
 
-              </div>
-            </Route>
-          </Switch>
-          {routeGames}
-        </Router>
-      </div>
+            </div>
+          </Route>
+        </Switch>
+        {routeGames}
+      </Router>
+      </div >
 
 
     );

@@ -5,6 +5,18 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import SplashScreen from '../config/components/SplashScreen/SplashScreen';
 import LazyLoad from 'react-lazy-load';
 import { Redirect } from 'react-router-dom'
+import mp3 from '../audio/sayless.mp3'
+import Sound from 'react-sound';
+function Bgm(props) {
+    return (
+      <Sound
+        url={mp3}
+        playStatus={props.play ? Sound.status.PLAYING : Sound.status.PAUSED}
+        loop={true}
+        autoLoad={true}
+      />
+    )
+  }
 class StoryPage extends React.Component {
     constructor(props) {
         super(props);
@@ -126,8 +138,9 @@ class StoryPage extends React.Component {
                         key={this.state.stage}
                         timeout={2000}
                         classNames="fade"
-                    >
+                    > 
                         <div id={"stage" + this.state.stage} className="StoryPage">
+                        <Bgm play={this.props.music} />
                             <div className="Question">
                                 <p>{
                                     this.state.question.textHighlight ?
