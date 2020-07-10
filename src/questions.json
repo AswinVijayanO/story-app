@@ -9,11 +9,11 @@
             "questions":[
                 {
                     "text":"$$NAME$$ You have a box",
-                    "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "img":"https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=linus-sandvide-5DIFvVwe6wk-unsplash.jpg&w=640",
                     "options":[
                         {
                             "text":"Open the box",
-                            "actionIndex":2
+                            "actionIndex":1
                         },
                         {
                             "text":"throw the box",
@@ -23,7 +23,7 @@
                 },
                 {
                     "text":"There is a key",
-                    "img":"https://images.unsplash.com/photo-1562701447-8ec5d514a2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "img":"https://images.unsplash.com/photo-1519599189038-58e6fc7a060d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=michael-shannon-mE6zS5LwScM-unsplash.jpg&w=640",
                     "options":[
                         {
                             "text":"take the key",
@@ -37,7 +37,7 @@
                 },
                 {
                     "text":"There is a door, but thats locked",
-                    "img":"https://images.unsplash.com/photo-1542251224-3e60f8d50cd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1527&q=80",
+                    "img":"https://images.unsplash.com/photo-1553519247-44662ceaaf0b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=fabrizio-conti-oMhdPgs6y7Q-unsplash.jpg&w=1920",
                     "options":[
                         {
                             "text":"Open the door using the key",
@@ -81,7 +81,7 @@
             "questions":[
                 {
                     "text":"$$NAME$$ erangi podaa",
-                    "img":"https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "img":"https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=linus-sandvide-5DIFvVwe6wk-unsplash.jpg&w=640",
                     "options":[
                         {
                             "text":"Open the box",
@@ -95,7 +95,7 @@
                 },
                 {
                     "text":"There is a key",
-                    "img":"https://images.unsplash.com/photo-1562701447-8ec5d514a2a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+                    "img":"https://images.unsplash.com/photo-1519599189038-58e6fc7a060d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=michael-shannon-mE6zS5LwScM-unsplash.jpg&w=640",
                     "options":[
                         {
                             "text":"take the key",
@@ -109,7 +109,7 @@
                 },
                 {
                     "text":"There is a door, but thats locked",
-                    "img":"https://images.unsplash.com/photo-1542251224-3e60f8d50cd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1527&q=80",
+                    "img":"https://images.unsplash.com/photo-1553519247-44662ceaaf0b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=fabrizio-conti-oMhdPgs6y7Q-unsplash.jpg&w=1920",
                     "options":[
                         {
                             "text":"Open the door using the key",
@@ -124,7 +124,7 @@
                 {
                     "text":"You found the treasure,you won!",
                     "textHighlight": "neonBlink",
-                    "img" : "https://images.unsplash.com/photo-1585924775990-bd3f24bbc72e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
+                    "img" : "https://images.unsplash.com/photo-1541542684-be0c46417a12?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=edoardo-busti-HVWVERp33tQ-unsplash.jpg&w=640",
                     "options":[
                         {
                             "text":"exit the game",

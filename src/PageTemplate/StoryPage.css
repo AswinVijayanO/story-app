@@ -4,8 +4,10 @@
     font-weight: 500;
     margin-bottom: auto;
     padding-top: 1em;
-    text-align: center;
+    text-align: left;
     color: ghostwhite;
+    margin: 20px;
+    font-family: 'DM Sans', sans-serif;
   }
   .StoryPage {
     position: absolute;
@@ -14,11 +16,10 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
   }
 .options{
   margin-top: auto;
-  padding-bottom: 6em;
+  margin-bottom: 6em;
 }
   .image {
     position: fixed;
@@ -26,6 +27,7 @@
     top: 0;
     height: 100%;
     left: 0;
+    filter: brightness(70%) saturate(110%);
     animation: zoominoutsinglefeatured 100s forwards;
   }
   @keyframes zoominoutsinglefeatured {
@@ -172,4 +174,15 @@
   display: block;
   background: #f1d479;
   background: radial-gradient(ghostwhite 30%, rgba(241, 212, 121, 0) 80%);
+}
+.reset{
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  font-family: 'DM Sans';
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  width:40vw;
+  text-align: center;
 }

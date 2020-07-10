@@ -15,8 +15,16 @@
   position: absolute;
   width: -webkit-fill-available;
   justify-content: space-between;
-  color: antiquewhite;
+  color: rgb(255, 255, 255);
   z-index: 1;
+  padding: 10px;
+}
+.blur{
+  padding: 20px;
+  backdrop-filter: blur(20px)  brightness(150%)  saturate(140%);
+  background-color: #69696973;
+  border-radius: 20px;
+  box-shadow: 0 0 3px #00000027;
 }
 .button{
   border: none;

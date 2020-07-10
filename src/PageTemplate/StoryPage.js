@@ -158,7 +158,7 @@ class StoryPage extends React.Component {
                             ) : (
                                     <></>
                                 )}
-                            <div className="options">
+                            <div className="options blur">
                                 {this.state.question.options.map((item, index) => {
                                     return (
                                         <div>
@@ -182,7 +182,11 @@ class StoryPage extends React.Component {
                                         </div>
                                     );
                                 })}
+
                             </div>
+                            <div className="reset">
+                                    <p>Reset </p>
+                                </div>
                         </div>
                     </CSSTransition>
                 </TransitionGroup>
