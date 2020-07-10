@@ -9,14 +9,14 @@ import mp3 from '../audio/sayless.mp3'
 import Sound from 'react-sound';
 function Bgm(props) {
     return (
-      <Sound
-        url={mp3}
-        playStatus={props.play ? Sound.status.PLAYING : Sound.status.PAUSED}
-        loop={true}
-        autoLoad={true}
-      />
+        <Sound
+            url={mp3}
+            playStatus={props.play ? Sound.status.PLAYING : Sound.status.PAUSED}
+            loop={true}
+            autoLoad={true}
+        />
     )
-  }
+}
 class StoryPage extends React.Component {
     constructor(props) {
         super(props);
@@ -27,6 +27,7 @@ class StoryPage extends React.Component {
             user: props.user
         };
         this.saveUserProgress = this.saveUserProgress.bind(this)
+        this.reset = this.reset.bind(this)
     }
     saveUserProgress(uid, stage, gameName) {
         db.collection("users")
@@ -46,6 +47,33 @@ class StoryPage extends React.Component {
                             .doc(uid)
                             .set({ uid, games: updatedGameProgress });
                     }
+                }
+            });
+    }
+    reset(uid, stage, gameName) {
+        var me = this;
+        db.collection("users")
+            .doc(uid)
+            .get()
+            .then(function (user) {
+                if (user.exists) {
+                    if (user.data().games.filter((item) => { return item.name === gameName }) == null) {
+                        return;
+                    }
+                    var games = user.data().games;
+
+
+                    var otherGames = games.filter((item) => { return item.name !== gameName })
+                    var updatedGameProgress = otherGames.concat({ name: gameName, progress: [0] });
+                    db.collection("users")
+                        .doc(uid)
+                        .set({ uid, games: updatedGameProgress });
+                        me.setState({
+                        question: me.getPersonalisedQuestion(me.props.questions[0], me.state.user),
+                        stage: 0
+                    });
+
+
                 }
             });
     }
@@ -138,9 +166,9 @@ class StoryPage extends React.Component {
                         key={this.state.stage}
                         timeout={2000}
                         classNames="fade"
-                    > 
+                    >
                         <div id={"stage" + this.state.stage} className="StoryPage">
-                        <Bgm play={this.props.music} />
+                            <Bgm play={this.props.music} />
                             <div className="Question">
                                 <p>{
                                     this.state.question.textHighlight ?
@@ -184,9 +212,9 @@ class StoryPage extends React.Component {
                                 })}
 
                             </div>
-                            <div className="reset">
-                                    <p>Reset </p>
-                                </div>
+                            <div className="reset blur" onClick={() => { this.reset(this.state.user.uid, this.state.stage, this.props.gameName) }}>
+                                <p>Reset </p>
+                            </div>
                         </div>
                     </CSSTransition>
                 </TransitionGroup>
