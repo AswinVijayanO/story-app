@@ -177,12 +177,10 @@
 }
 .reset{
   color: #fff;
-  border: 2px solid #fff;
   border-radius: 15px;
   font-family: 'DM Sans';
-  padding-left: 20px;
-  padding-right: 20px;
   margin: 10px;
   width:40vw;
+  font-size: large;
   text-align: center;
 }
