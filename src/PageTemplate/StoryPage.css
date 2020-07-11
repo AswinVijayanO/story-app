@@ -21,6 +21,9 @@
   margin-top: auto;
   margin-bottom: 6em;
 }
+.Link{
+  min-width: 60vw;
+}
   .image {
     position: fixed;
     z-index: -1;

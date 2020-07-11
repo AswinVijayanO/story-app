@@ -35,3 +35,11 @@
     grid-area: 1 / 1;
     filter: blur(7px);
 }
+p{
+    color: #000;
+    font-family: 'DM Sans';
+    text-align: left;
+    padding: 20px;
+    font-size: 28px;
+    margin: 20px;
+}
