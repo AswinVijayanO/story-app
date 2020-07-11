@@ -179,7 +179,12 @@ class StoryPage extends React.Component {
                                     debounce={false}
                                     offsetVertical={500}
                                 >
-                                    <img className="image" src={this.state.question.img} />
+                                    <div className="image-holder-div">
+                                    <div className="image-holder">
+                                    <img className="image image-bottom" src={this.state.question.img} />
+                                    <img className="image image-top" src={this.state.question.img} />
+                                    </div>
+                                    </div>
                                 </LazyLoad>
                             ) : (
                                     <></>
@@ -198,12 +203,6 @@ class StoryPage extends React.Component {
                                             >
                                                 {item.text}
                                             </div>
-                                            {
-                                                this.state.question.options.length - 1 === index ?
-                                                    <div></div> :
-                                                    <div className="line-seperator">
-                                                    </div>
-                                            }
 
                                         </div>
                                     );

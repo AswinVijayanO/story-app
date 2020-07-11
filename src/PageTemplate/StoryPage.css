@@ -16,22 +16,37 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    background-color: #283333;
+    z-index: 0;
   }
 .options{
   margin-top: auto;
   margin-bottom: 6em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.image-holder{
+  max-height: 57%;
+  display: grid;
 }
 .Link{
   min-width: 60vw;
 }
   .image {
-    position: fixed;
+    grid-area: 1 / 1;
+    position: absolute;
     z-index: -1;
-    top: 0;
-    height: 100%;
+    height: 53%;
+    max-height: 57%;
+    width: 90%;
+    margin-left: 5%;
     left: 0;
-    filter: brightness(50%)  saturate(110%);
-    animation: zoominoutsinglefeatured 100s forwards;
+    top: 5em;
+    border-radius: 20px 20px 20px 20px;
+    overflow-y: auto;
+    /* filter: brightness(50%)  saturate(110%); */
+    /* animation: zoominoutsinglefeatured 100s forwards; */
   }
   @keyframes zoominoutsinglefeatured {
     0% {
@@ -43,6 +58,9 @@
     100% {
         transform: scale(1,1);
     }
+}
+.image-bottom{
+  filter: blur(20px);
 }
   .fade-appear {
     opacity: 0;
@@ -145,11 +163,19 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 .neon-button{
   font-size: 6vw;
-  color: lightblue;
-  text-shadow: 5px 5px 30px blue;
+  color: white;
+  /* text-shadow: 5px 5px 30px blue; */
   font-family: 'Quicksand';
   font-weight: lighter;
   text-align: center;
+  height: 3em;
+  width: auto;
+  background: #394848;
+  display: flex;
+  margin-left: 2pt;
+  align-items: center;
+  padding: 1em;
+  border-radius: 11px;
 }
 @keyframes repeat {
 

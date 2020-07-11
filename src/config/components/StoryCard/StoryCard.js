@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import './StoryCard.css';
+import {Favorite} from '@styled-icons/material/Favorite';
+import {FavoriteBorder} from '@styled-icons/material/FavoriteBorder';
 class StoryCard extends React.Component {
     constructor(props) {
         super(props);
         console.log(props)
         console.log("From StoryPAger comp")
         this.state = {
-            gameDetails: props.gameDetails
+            gameDetails: props.gameDetails,
+            favourite: true
         };
+        this.toggleFavourite = this.toggleFavourite.bind(this);
     }
+    toggleFavourite() {
+        this.setState({ favourite: !this.state.favourite })
+      }
     render() {
         return (
             <div className="container">
@@ -18,9 +25,13 @@ class StoryCard extends React.Component {
                             <div className="overlay"></div>
                             <div className="content">
                                 <div>{this.state.gameDetails.gameLabel}</div>
+                                
+                            <div className="fav-holder">
+                            {this.state.favourite ?
+                            <Favorite onClick={this.toggleFavourite} size="32" title="Favourite" /> :
+                            <FavoriteBorder onClick={this.toggleFavourite} size="32" title="Favourite" />
+                            }
                             </div>
-                            <div className="fav">
-                                <i className="far fa-heart"></i>
                             </div>
                         </div>
                     </div>

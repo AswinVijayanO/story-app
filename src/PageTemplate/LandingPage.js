@@ -12,11 +12,12 @@ export default function LandingPage(props) {
             <div className="head-section">
                 Hello There ..
             </div>
-            
+            <div className="game-carousels">
+                <div className="favourite-game-section">
             {
                 <div className="game-section" >
                    <p>Choose your adventure</p>
-                   <div style={{paddingLeft:20,flexDirection: 'row', display: 'flex', width: '100vw', overflow: 'scroll', flex: 1 }}>
+                   <div style={{flexDirection: 'row', display: 'flex',overflow: 'scroll', flex: 1 }}>
                     {contests.map((item, index) => {
                         console.log(item.gameName)
                         return (
@@ -35,8 +36,28 @@ export default function LandingPage(props) {
                     }</div>
                     <p>Create your adventure</p>
                 </div>
-            } 
-        </div>
+            }
+            </div>
+            <div className="all-games-list">
+            {contests.map((item, index) => {
+                    console.log(item.gameName)
+                    return (
+                        <Link to={"/games/" + item.gameName}>
+                            <div className="for-shadow">
+                            <div className="card-bottom">
+                            <StoryCard  gameDetails={item}></StoryCard>
+                            </div>
+                            <div className="card-top">
+                            <StoryCard  gameDetails={item}></StoryCard>
+                            </div>
+                            </div>
+                                </Link>
+                    )
+                })
+            }
+            </div>
+            </div>
+            </div> 
     );
 }
 
