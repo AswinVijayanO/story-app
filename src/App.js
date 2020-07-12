@@ -114,7 +114,7 @@ class App extends React.Component {
               {
                 user
                   ? <div>
-                    <LandingPage />
+                    <LandingPage user={user} />
                   </div>
                   : <div>
                     {

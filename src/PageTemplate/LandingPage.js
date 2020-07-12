@@ -7,10 +7,16 @@ import conf from '../questions.json'
 import StoryCard from "../config/components/StoryCard/StoryCard";
 export default function LandingPage(props) {
     var contests = conf.contests
+    console.log(props.user)
     return (
         <div className="main-content" >
             <div className="head-section">
-                Hello There ..
+                <div>
+                {
+                   "Hello " +props.user.displayName
+                }
+                </div>
+      
             </div>
             <div className="game-carousels">
                 <div className="favourite-game-section">
