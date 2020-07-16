@@ -165,11 +165,9 @@ class StoryPage extends React.Component {
                         timeout={2000}
                         classNames="fade"
                     >
-                        {
-                            this.props.gameTheme === 'dark' ? 
-                        <div id={"stage" + this.state.stage} className="StoryPage-dark">
+                        <div id={"stage" + this.state.stage} className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.imageTheme}>
                             <Bgm play={this.props.music} />
-                            <div className="Question-dark">
+                            <div className={"Questions " + "Question-" + this.props.gameTheme}>
                                 {
                                     this.state.question.textHighlight ?
                                         <div className={"effect-" + this.state.question.textHighlight}>{this.state.question.text}</div>
@@ -183,8 +181,8 @@ class StoryPage extends React.Component {
                                 >
                                     <div className="image-holder-div">
                                     <div className="image-holder">
-                                    <img className="image image-bottom" src={this.state.question.img} />
-                                    <img className="image image-top" src={this.state.question.img} />
+                                    <img className={"image-bottom " + "image-" + this.state.question.imageTheme} src={this.state.question.img} />
+                                    <img className={"image-top " + "image-" + this.state.question.imageTheme} src={this.state.question.img} />
                                     </div>
                                     </div>
                                 </LazyLoad>
@@ -195,7 +193,7 @@ class StoryPage extends React.Component {
                                 {this.state.question.options.map((item, index) => {
                                     return (
                                         <div>
-                                            <div className="neon-button-dark"
+                                            <div className={"neon-button " + "neon-button-" + this.props.gameTheme}
                                                 onClick={() => {
                                                     this.setState({
                                                         question: this.getPersonalisedQuestion(this.props.questions[item.actionIndex], this.state.user),
@@ -214,57 +212,7 @@ class StoryPage extends React.Component {
                             <div className="reset blur" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}>
                                 Reset
                             </div>
-                        </div> :
-                                                <div id={"stage" + this.state.stage} className="StoryPage-light">
-                                                <Bgm play={this.props.music} />
-                                                <div className="Question-light">
-                                                    {
-                                                        this.state.question.textHighlight ?
-                                                            <div className={"effect-" + this.state.question.textHighlight}>{this.state.question.text}</div>
-                                                            :
-                                                            this.state.question.text}
-                                                </div>
-                                                {this.state.question.img ? (
-                                                    <LazyLoad
-                                                        debounce={false}
-                                                        offsetVertical={500}
-                                                    >
-                                                        <div className="image-holder-div">
-                                                        <div className="image-holder">
-                                                        <img className="image image-bottom" src={this.state.question.img} />
-                                                        <img className="image image-top" src={this.state.question.img} />
-                                                        </div>
-                                                        </div>
-                                                    </LazyLoad>
-                                                ) : (
-                                                        <></>
-                                                    )}
-                                                <div className="options">
-                                                    {this.state.question.options.map((item, index) => {
-                                                        return (
-                                                            <div>
-                                                                <div className="neon-button-light"
-                                                                    onClick={() => {
-                                                                        this.setState({
-                                                                            question: this.getPersonalisedQuestion(this.props.questions[item.actionIndex], this.state.user),
-                                                                            stage: item.actionIndex
-                                                                        });
-                                                                    }}
-                                                                >
-                                                                    {item.text}
-                                                                </div>
-                    
-                                                            </div>
-                                                        );
-                                                    })}
-                    
-                                                </div>
-                                                <div className="reset blur" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}>
-                                                    Reset
-                                                </div>
-                                            </div>
-
-        }
+                        </div>
                     </CSSTransition>
                 </TransitionGroup>
 

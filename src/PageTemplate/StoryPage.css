@@ -1,43 +1,32 @@
 
-.Question-dark {    
-  font-size: 10vw;
-    font-weight: 500;
-    margin-bottom: auto;
-    padding-top: 1em;
-    text-align: left;
+.Question-dark {
     color: ghostwhite;
-    margin: 20px;
-    font-family: 'DM Sans', sans-serif;
   }
-  .Question-light {    
+  .Questions {    
     font-size: 10vw;
       font-weight: 500;
       margin-bottom: auto;
       padding-top: 1em;
       text-align: left;
-      color: #aaaaab;
       margin: 20px;
       font-family: 'DM Sans', sans-serif;
     }
+  .Question-light {
+      color: #aaaaab;
+    }
+    .StoryPage{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
   .StoryPage-dark {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
     background-color: #283333;
-    z-index: 0;
   }
   .StoryPage-light {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
     background-color: #FFFFFF;
-    z-index: 0;
   }
 .options{
   margin-top: auto;
@@ -54,7 +43,23 @@
 .Link{
   min-width: 60vw;
 }
-  .image {
+.StoryPage-gallery {
+  position: relative;
+}
+.StoryPage-fullScreen {
+  position: fixed;
+}
+.image-fullScreen {
+  position: absolute;
+  z-index: -1;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  background-size: cover;
+  /* filter: brightness(50%)  saturate(110%); */
+  /* animation: zoominoutsinglefeatured 100s forwards; */
+}
+  .image-gallery {
     grid-area: 1 / 1;
     z-index: -1;
     max-height: 57%;
@@ -179,6 +184,9 @@
 /* neon button */
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 .neon-button-dark{
+  background: #394848;
+}
+.neon-button{
   font-size: 6vw;
   color: white;
   /* text-shadow: 5px 5px 30px blue; */
@@ -187,7 +195,6 @@
   text-align: center;
   height: 3em;
   width: auto;
-  background: #394848;
   display: flex;
   margin-left: 2pt;
   align-items: center;
@@ -197,21 +204,7 @@
   margin: 0.5em;
 }
 .neon-button-light{
-  font-size: 6vw;
-  color: white;
-  /* text-shadow: 5px 5px 30px blue; */
-  font-family: 'Quicksand';
-  font-weight: lighter;
-  text-align: center;
-  width: auto;
   background: #EB9B58;
-  display: flex;
-  margin-left: 2pt;
-  align-items: center;
-  justify-content: center;
-  padding: 1em;
-  border-radius: 11px;
-  margin: 0.5em;
 }
 @keyframes repeat {
 
