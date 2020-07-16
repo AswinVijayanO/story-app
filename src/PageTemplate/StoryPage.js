@@ -167,7 +167,7 @@ class StoryPage extends React.Component {
                     >
                         <div id={"stage" + this.state.stage} className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.imageTheme}>
                             <Bgm play={this.props.music} />
-                            <div className={"Questions " + "Question-" + this.props.gameTheme}>
+                            <div style={{color: this.state.question.textColor}} className={"Questions " + "Question-" + this.props.gameTheme}>
                                 {
                                     this.state.question.textHighlight ?
                                         <div className={"effect-" + this.state.question.textHighlight}>{this.state.question.text}</div>

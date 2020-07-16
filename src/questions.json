@@ -12,6 +12,7 @@
             "questions":[
                 {
                     "text":"$$NAME$$ You have a box",
+                    "textColor": "ghostwhite",
                     "imageTheme":"fullScreen",
                     "img":"https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=linus-sandvide-5DIFvVwe6wk-unsplash.jpg&w=640",
                     "options":[
@@ -27,6 +28,7 @@
                 },
                 {
                     "text":"There is a key",
+                    "textColor": "#aaaaab",
                     "imageTheme":"gallery",
                     "img":"https://images.unsplash.com/photo-1519599189038-58e6fc7a060d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=michael-shannon-mE6zS5LwScM-unsplash.jpg&w=640",
                     "options":[
