@@ -89,7 +89,7 @@ class App extends React.Component {
                 this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
                   : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
               }
-              <Reset size="32" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}/>
+              {item.generalConfig.canReset ? <Reset size="32" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}/> : ''}
               <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
               
             </div>
