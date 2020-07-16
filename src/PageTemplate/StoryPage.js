@@ -209,9 +209,6 @@ class StoryPage extends React.Component {
                                 })}
 
                             </div>
-                            <div className="reset blur" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}>
-                                Reset
-                            </div>
                         </div>
                     </CSSTransition>
                 </TransitionGroup>
