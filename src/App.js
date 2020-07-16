@@ -69,15 +69,6 @@ class App extends React.Component {
       signOut,
     } = this.props;
 
-    function TopBar() {
-      return (<div className="top-bar">
-        {
-          this.state.music ? <MusicNote onClick={this.toggleMusic} size="32" title="Music" />
-            : <MusicOff onClick={this.toggleMusic} size="32" title="Music" />
-        }
-        <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
-      </div>)
-    }
     function SplashScreenComp(props) {
       return <SplashScreen />;
     }
@@ -93,14 +84,14 @@ class App extends React.Component {
       return (
         <div className="game-page">
           <Route exact path={"/games/" + item.gameName}>
-            <div className="top-bar">
+            <div className={item.generalConfig.gameTheme === 'dark' ? 'top-bar-dark' : 'top-bar-light'}>
               {
                 this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
                   : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
               }
               <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
             </div>
-            <StoryPage music={this.state.music} questions={item.questions} user={user} gameName={item.gameName} />
+            <StoryPage music={this.state.music} questions={item.questions} user={user} gameTheme={item.generalConfig.gameTheme} gameName={item.gameName} />
           </Route>
         </div>
       )

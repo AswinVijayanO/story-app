@@ -10,12 +10,22 @@
   color: aliceblue;
   background-color:transparent;
 }
-.top-bar{
+.top-bar-dark{
   display: flex;
   position: absolute;
   width: -webkit-fill-available;
   justify-content: space-between;
   color: #777777;
+  z-index: 1;
+  padding: 10px;
+}
+
+.top-bar-light{
+  display: flex;
+  position: absolute;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  color: #EB9B58;
   z-index: 1;
   padding: 10px;
 }

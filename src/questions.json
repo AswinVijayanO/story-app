@@ -2,6 +2,7 @@
     "contests":[
         {
             "generalConfig":{
+                "gameTheme":"dark",
                 "thumbnail":"https://image.freepik.com/free-vector/colorful-gradient-liquid-shapes-background_23-2148250143.jpg",
                 "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
             },
@@ -76,6 +77,7 @@
         },
         {
             "generalConfig":{
+                "gameTheme":"light",
                 "thumbnail":"https://image.cnbcfm.com/api/v1/image/105074499-quit_job.jpg?v=1532563667&w=1600&h=900",
                 "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
             },
@@ -145,6 +147,7 @@
         },
         {
             "generalConfig":{
+                "gameTheme":"dark",
                 "thumbnail":"https://ichef.bbci.co.uk/news/1024/cpsprodpb/E909/production/_112375695_crucible976.jpg",
                 "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
             },
@@ -218,6 +221,7 @@
         },
         {
             "generalConfig":{
+                "gameTheme":"dark",
                 "thumbnail":"https://images.greenmangaming.com/f73a2c9616654542802cdef97ef8c86e/9ac2fbebe01e4af2b6679d784c18dcff.jpg",
                 "audioUrl":"http://nl03.mp3pro.xyz/abc5139b5a924781951d3/JONY%20Love%20Your%20Voice%20My%20baby%20I%20love%20your%20voice%20English%20Songs%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5.mp3"
             },

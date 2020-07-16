@@ -1,5 +1,5 @@
 
-.Question {    
+.Question-dark {    
   font-size: 10vw;
     font-weight: 500;
     margin-bottom: auto;
@@ -9,8 +9,18 @@
     margin: 20px;
     font-family: 'DM Sans', sans-serif;
   }
-  .StoryPage {
-    position: absolute;
+  .Question-light {    
+    font-size: 10vw;
+      font-weight: 500;
+      margin-bottom: auto;
+      padding-top: 1em;
+      text-align: left;
+      color: #aaaaab;
+      margin: 20px;
+      font-family: 'DM Sans', sans-serif;
+    }
+  .StoryPage-dark {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,10 +29,21 @@
     background-color: #283333;
     z-index: 0;
   }
+  .StoryPage-light {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+    z-index: 0;
+  }
 .options{
   margin-top: auto;
-  margin-bottom: 6em;
+  margin-bottom: 2em;
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
 }
@@ -35,14 +56,10 @@
 }
   .image {
     grid-area: 1 / 1;
-    position: absolute;
     z-index: -1;
-    height: 53%;
     max-height: 57%;
     width: 90%;
     margin-left: 5%;
-    left: 0;
-    top: 5em;
     border-radius: 20px 20px 20px 20px;
     overflow-y: auto;
     /* filter: brightness(50%)  saturate(110%); */
@@ -161,7 +178,7 @@
 
 /* neon button */
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
-.neon-button{
+.neon-button-dark{
   font-size: 6vw;
   color: white;
   /* text-shadow: 5px 5px 30px blue; */
@@ -174,8 +191,27 @@
   display: flex;
   margin-left: 2pt;
   align-items: center;
+  justify-content: center;
   padding: 1em;
   border-radius: 11px;
+  margin: 0.5em;
+}
+.neon-button-light{
+  font-size: 6vw;
+  color: white;
+  /* text-shadow: 5px 5px 30px blue; */
+  font-family: 'Quicksand';
+  font-weight: lighter;
+  text-align: center;
+  width: auto;
+  background: #EB9B58;
+  display: flex;
+  margin-left: 2pt;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  border-radius: 11px;
+  margin: 0.5em;
 }
 @keyframes repeat {
 
@@ -189,26 +225,10 @@
 }
 
 /* neon button */
-.line-seperator {
-  position: relative;
-  margin-top: 6px;
-}
-.line-seperator:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 2px;
-  display: block;
-  background: #f1d479;
-  background: radial-gradient(ghostwhite 30%, rgba(241, 212, 121, 0) 80%);
-}
 .reset{
   color: #fff;
   border-radius: 15px;
   font-family: 'DM Sans';
-  margin: 10px;
   width:40vw;
   font-size: large;
   text-align: center;
