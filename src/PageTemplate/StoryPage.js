@@ -165,24 +165,24 @@ class StoryPage extends React.Component {
                         timeout={2000}
                         classNames="fade"
                     >
-                        <div id={"stage" + this.state.stage} className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.imageTheme}>
+                        <div id={"stage" + this.state.stage} className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.questionConfig.imageTheme}>
                             <Bgm play={this.props.music} />
                             <div style={{color: this.state.question.textColor}} className={"Questions " + "Question-" + this.props.gameTheme}>
                                 {
-                                    this.state.question.textHighlight ?
-                                        <div className={"effect-" + this.state.question.textHighlight}>{this.state.question.text}</div>
+                                    this.state.question.questionConfig.textHighlight ?
+                                        <div className={"effect-" + this.state.question.questionConfig.textHighlight}>{this.state.question.text}</div>
                                         :
                                         this.state.question.text}
                             </div>
-                            {this.state.question.img ? (
+                            {this.state.question.questionConfig.img ? (
                                 <LazyLoad
                                     debounce={false}
                                     offsetVertical={500}
                                 >
                                     <div className="image-holder-div">
                                     <div className="image-holder">
-                                    <img className={"image-bottom " + "image-" + this.state.question.imageTheme} src={this.state.question.img} />
-                                    <img className={"image-top " + "image-" + this.state.question.imageTheme} src={this.state.question.img} />
+                                    <img className={"image-bottom " + "image-" + this.state.question.questionConfig.imageTheme} src={this.state.question.questionConfig.img} />
+                                    <img className={"image-top " + "image-" + this.state.question.questionConfig.imageTheme} src={this.state.question.questionConfig.img} />
                                     </div>
                                     </div>
                                 </LazyLoad>
