@@ -10,6 +10,7 @@ import 'firebase/firestore';
 import SplashScreen from './config/components/SplashScreen/SplashScreen';
 import LoginPage from './config/components/LoginPage/LoginPage';
 import { MusicNote, MusicOff } from '@styled-icons/material-rounded';
+import { Reset } from  '@styled-icons/boxicons-regular/Reset';
 import { SignOutAlt } from '@styled-icons/fa-solid/SignOutAlt';
 import StoryPage from './PageTemplate/StoryPage'
 import {
@@ -32,7 +33,6 @@ class App extends React.Component {
     this.signInWithGooglePop = this.signInWithGooglePop.bind(this);
     this.toggleMusic = this.toggleMusic.bind(this);
   }
-
   signInWithGooglePop() {
     console.log('asd');
     this.setState({ loading: true, music: true });
@@ -84,12 +84,14 @@ class App extends React.Component {
       return (
         <div className="game-page">
           <Route exact path={"/games/" + item.gameName}>
-            <div className={item.generalConfig.gameTheme === 'dark' ? 'top-bar-dark' : 'top-bar-light'}>
+            <div className={'top-bar-' + item.generalConfig.gameTheme}>
               {
                 this.state.music ? <MusicNote onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
                   : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
               }
+              <Reset size="32" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}/>
               <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
+              
             </div>
             <StoryPage music={this.state.music} questions={item.questions} user={user} gameTheme={item.generalConfig.gameTheme} gameName={item.gameName} />
           </Route>
