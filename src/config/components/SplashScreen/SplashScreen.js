@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SplashScreen.css';
 class SplashScreen extends React.Component {
 

@@ -165,7 +165,7 @@ class StoryPage extends React.Component {
                         timeout={2000}
                         classNames="fade"
                     >
-                        <div id={"stage" + this.state.stage} className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.questionConfig.imageTheme}>
+                        <div  className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.questionConfig.imageTheme}>
                             <Bgm play={this.props.music} />
                             <div style={{color: this.state.question.textColor}} className={"Questions " + "Question-" + this.props.gameTheme}>
                                 {

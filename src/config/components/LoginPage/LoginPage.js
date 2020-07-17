@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './LoginPage.css';
 import { Google } from  '@styled-icons/evaicons-solid/Google'
 class LoginPage extends React.Component {

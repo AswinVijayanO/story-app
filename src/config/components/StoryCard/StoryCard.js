@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './StoryCard.css';
 import {Favorite} from '@styled-icons/material/Favorite';
 import {FavoriteBorder} from '@styled-icons/material/FavoriteBorder';
