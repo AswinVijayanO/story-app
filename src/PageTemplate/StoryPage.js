@@ -30,6 +30,7 @@ class StoryPage extends React.Component {
         this.reset = this.reset.bind(this)
     }
     saveUserProgress(uid, stage, gameName) {
+
         db.collection("users")
             .doc(uid)
             .get()
@@ -101,16 +102,16 @@ class StoryPage extends React.Component {
                     if (games.filter((item) => { return item.name === props.gameName }).length === 0) {
                         console.log("New to this game")
                         var stage = 0
-                        var updatedGameProgress = games.concat({ name: props.gameName, progress: [0] });
+                        var otherGames = games.filter((item) => { return item.name !== props.gameName })
+                        var updatedGameProgress = otherGames.concat({ name: props.gameName, progress: [0] });
                         var newUser = { uid, games: updatedGameProgress };
                         db.collection("users")
-                            .doc(uid)
-                            .set(newUser);
+                            .doc(uid).set(newUser)
                     } else {
                         console.log("Existing user")
                         stage = games.filter((item) => { return item.name === props.gameName })[0].progress.slice(-1)[0]
                     }
-                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[stage], user)
+                    persolnalisedQ = me.getPersonalisedQuestion(props.questions[stage], user)
                     stage = stage >= 0 ? stage : 0
                     console.log("QUEST?" + persolnalisedQ)
                     upadatePage({
@@ -125,7 +126,7 @@ class StoryPage extends React.Component {
                         .doc(user.uid)
                         .set(updatedUser);
 
-                    persolnalisedQ = this.getPersonalisedQuestion(props.questions[0], user)
+                    persolnalisedQ = me.getPersonalisedQuestion(props.questions[0], user)
                     console.log("QUEST?" + persolnalisedQ)
                     upadatePage({
                         stage: 0,
@@ -135,19 +136,7 @@ class StoryPage extends React.Component {
                 }
             })
             .catch(function (error) {
-                console.log("New user")
-                var updatedUser = { uid, games: [{ name: props.gameName, progress: [0] }] };
-                db.collection("users")
-                    .doc(uid)
-                    .set(updatedUser);
-
-                persolnalisedQ = me.getPersonalisedQuestion(props.questions[0], me.state.user)
-                console.log("QUEST?" + persolnalisedQ)
-                upadatePage({
-                    stage: 0,
-                    question: persolnalisedQ,
-                    loading: false
-                });
+                console.log(error)
             });
     }
     render() {
@@ -165,7 +154,7 @@ class StoryPage extends React.Component {
                         timeout={2000}
                         classNames="fade"
                     >
-                        <div id={"stage" + this.state.stage} className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.questionConfig.imageTheme}>
+                        <div  className={"StoryPage " + "StoryPage-" + this.props.gameTheme + " StoryPage-" + this.state.question.questionConfig.imageTheme}>
                             <Bgm play={this.props.music} />
                             <div style={{color: this.state.question.textColor}} className={"Questions " + "Question-" + this.props.gameTheme}>
                                 {
