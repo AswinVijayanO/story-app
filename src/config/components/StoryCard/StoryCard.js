@@ -5,8 +5,6 @@ import {FavoriteBorder} from '@styled-icons/material/FavoriteBorder';
 class StoryCard extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
-        console.log("From StoryPAger comp")
         this.state = {
             gameDetails: props.gameDetails,
             favourite: true
