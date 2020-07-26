@@ -13,6 +13,7 @@ import { MusicNote, MusicOff } from '@styled-icons/material-rounded';
 import { Reset } from  '@styled-icons/boxicons-regular/Reset';
 import { SignOutAlt } from '@styled-icons/fa-solid/SignOutAlt';
 import StoryPage from './PageTemplate/StoryPage'
+import History from './config/History'
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,6 +34,7 @@ class App extends React.Component {
     this.signInWithGooglePop = this.signInWithGooglePop.bind(this);
     this.toggleMusic = this.toggleMusic.bind(this);
   }
+
   signInWithGooglePop() {
     console.log('asd');
     this.setState({ loading: true, music: true });
@@ -90,7 +92,7 @@ class App extends React.Component {
                   : <MusicOff onClick={() => { this.setState({ music: !this.state.music }) }} size="32" title="Music" />
               }
               {item.generalConfig.canReset ? <Reset size="32" onClick={() => { this.reset(this.state.user.uid,this.props.gameName) }}/> : ''}
-              <SignOutAlt onClick={signOut} size="32" title="Unlock account" />
+              <SignOutAlt onClick={()=>{signOut();History.push("/")}} size="32" title="Unlock account" />
               
             </div>
             <StoryPage music={this.state.music} questions={item.questions} user={user} gameTheme={item.generalConfig.gameTheme} gameName={item.gameName} />
@@ -100,7 +102,7 @@ class App extends React.Component {
     });
     return (
       <div>
-      <Router>
+      <Router history={History}>
         <Switch>
           <Route exact path="/">
             <div className="App">
