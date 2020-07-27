@@ -1,6 +1,7 @@
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+// import conf from '../questions.json'
 const firebaseConfig = {
   apiKey: "AIzaSyDTOaGDw0EPvbuaM9uoYodSinigVv2WV-g",
   authDomain: "socl-a9f10.firebaseapp.com",
@@ -18,3 +19,8 @@ export const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 export const db = firebaseApp.firestore()
+
+// conf.contests.map((item,index)=>{
+//   db.collection("contests").add(item)
+// })
+//Use db.collection("contests").get() to get all contests
